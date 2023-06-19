@@ -1,4 +1,6 @@
- 10  git init --bare my-first-project
+   ## Git Introduction
+   ```
+   10  git init --bare my-first-project
    11  ls
    12  mkdir my-second-project 
    13  ls
@@ -70,3 +72,4 @@
    79  ls -R 23/
    80  git cat-file f1e1ba100e08abd182ccc5ce92b82429ed57a93d -p 
    81  git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p 
+```
