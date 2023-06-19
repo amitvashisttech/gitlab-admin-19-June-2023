@@ -37,7 +37,7 @@ sudo apt-get install -y postfix
 
 ### Step 2: Add the GitLab Repo & Install Gitlab Packages 
 
-### NotePoint Replace "gitlab.example.com" with your machines FQDN. 
+### NotePoint :  Replace "gitlab.example.com" with your machines FQDN. 
 
 ```
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
