@@ -103,3 +103,29 @@ In this project, go to Project information > Members.
 The existing members of the parent group (you and test1) are already members of this project because when your project belongs to a group, project members inherit their role from the group.
 
 There are other users that need to be part of this project. You will now add users directly to the project.
+
+
+
+
+# GitLab Repo
+
+## Clone a repository
+When you clone a repository, the files from the remote repository are downloaded to your computer, and a connection is created.
+
+This connection requires you to add credentials. You can either use SSH or HTTPS. SSH is recommended.
+
+Clone with SSH
+Clone with SSH when you want to authenticate only one time.
+
+1. Authenticate with GitLab by following the instructions in the SSH documentation.
+2. Go to your project’s landing page and select Clone. Copy the URL for Clone with SSH.
+3. Open a terminal and go to the directory where you want to clone the files. Git automatically creates a folder with the repository name and downloads the files there.
+4. Run this command:
+   ```
+   git clone git@gitlab.com:gitlab-tests/sample-project.git
+   ```
+
+5. To view the files, go to the new directory:
+   ```
+   cd sample-project
+   ```
