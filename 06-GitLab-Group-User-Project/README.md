@@ -70,9 +70,9 @@ You have created the first test user. Now repeat this for the other users: ( tes
 1. On the left sidebar, at the top, select Search GitLab () to find the Development group.
 2. Select Manage > Members.
 3. Select Invite members.
-4. Complete the fields for the product manager, Alex Smith.
+4. Complete the fields for the product manager, Test1 .
 
-    - Give Alex the Owner role. The role applies to all subgroups projects in the group.
+    - Give Test1 the Owner role. The role applies to all subgroups projects in the group.
     - Leave Access expiration date blank.
 
 5. Select Invite.
