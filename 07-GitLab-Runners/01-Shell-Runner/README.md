@@ -53,7 +53,7 @@ root@gitlabdemovm1:~#
 ```
 
 
-## Now we need to introduce the .gitlab-ci file in our project. 
+## Now we need to introduce the .gitlab-ci.yml file in our project. 
 
 ```
 stages: 
