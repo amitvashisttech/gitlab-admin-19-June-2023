@@ -65,7 +65,7 @@ kubectl apply -f ../02-K8s-Runner-Deployment
 kubectl get all
 ```
 
-## Now update the ".gitlab-ci.yaml"
+## Now we need to update the .gitlab-ci.yml file with tags our project. 
 ```
 default:
   tags:
@@ -91,37 +91,3 @@ test-job:
     - cat /etc/os-release
     - uname -a 
 ```
-
-
-
-
-## Now we need to update the .gitlab-ci.yml file with tags our project. 
-
-```
-stages: 
-  - builddefault:
-  tags:
-    - docker
-
-stages: 
-  - build
-  - test
-
-build-job:
-  stage: build
-  script:
-    - echo "Welcome to the world of GitLab CICD Runner."
-    - cat /etc/os-release
-
-test-job:
-  stage: test
-  script:
-    - echo "Testing Docker Runner on the remote Node "
-    - uname -a
-
-build-job:
-  stage: build
-  script:
-    - echo "Welcome to the world of GitLab CICD Runner."
-    - cat /etc/os-release 
-```    
