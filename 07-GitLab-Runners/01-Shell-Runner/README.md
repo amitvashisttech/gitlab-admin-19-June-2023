@@ -13,7 +13,6 @@ sudo apt-get install gitlab-runner
 3. Runner Registration 
 ```
 sudo gitlab-runner register
-```
 
 ### Create a GitLab Runner Registration Token
 
