@@ -67,20 +67,29 @@ kubectl get all
 
 ## Now update the ".gitlab-ci.yaml"
 ```
-image: alpine
-
 default:
   tags:
     - k8s
     
 stages: 
   - build
+  - test
 
 build-job:
   stage: build
+  image: alpine
   script:
     - echo "Welcome to the world of GitLab CICD Runner."
     - cat /etc/os-release
+    - uname -a 
+
+test-job:
+  stage: test
+  image: alpine
+  script:
+    - echo "Welcome to the world of GitLab CICD Runner."
+    - cat /etc/os-release
+    - uname -a 
 ```
 
 
