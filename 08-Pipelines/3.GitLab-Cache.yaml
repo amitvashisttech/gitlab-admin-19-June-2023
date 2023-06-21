@@ -1,0 +1,51 @@
+image: ubuntu
+
+default:
+  tags:
+    - docker
+    
+stages: 
+  - build
+  - compile
+  - test
+  - package
+
+build-job-1: 
+  stage: build 
+  script: 
+    - cat /etc/os-release 
+
+build-job-2: 
+  stage: build 
+  script: 
+    - date
+
+compile: 
+  stage: compile
+  needs: ["build-job-1", "build-job-2"]
+  script: 
+    - cat helloworld.txt myprojectfile.txt README.md > complied.txt  
+  artifacts:
+    paths:
+      - complied.txt   
+    expire_in: 20 minutes
+
+cache:
+  key: "$CI_BUILD_REF"
+  paths:
+    - complied.txt     
+
+test: 
+  stage: test
+  needs: ["compile"]
+  script: 
+    - cat complied.txt | grep -q "Orange.ltd" 
+
+package: 
+  stage: package
+  needs: ["test"]
+  script: 
+    - cat complied.txt | gzip > packaged.gz
+  artifacts:
+    paths:
+      - packaged.gz  
