@@ -85,6 +85,11 @@ nginx['logrotate_maxsize'] = "200M" # rotate logs when they grow bigger than siz
 logrotate['enable'] = true
 logrotate['log_directory'] = "/var/log/gitlab/logrotate"
 ```
+
+4. Now check the changes in the below file
+```
+ls /var/opt/gitlab/logrotate/logrotate.d/nginx
+```
  
 
 
