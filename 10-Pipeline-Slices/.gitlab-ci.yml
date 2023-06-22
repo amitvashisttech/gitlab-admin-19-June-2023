@@ -1,0 +1,22 @@
+image: ubuntu
+
+default:
+  tags:
+    - docker
+
+variables: 
+  GLOBAL_VAR: "This is a global variable in this pipeline"    
+    
+stages: 
+  - build
+  - compile
+  - test
+  - package
+  - env_test
+  - env_prod
+
+include: 
+  - local: pipelines/default.yaml
+  - local: pipelines/test-and-package-pipeline.yaml
+  - local: pipelines/test-env-pipeline.yaml
+  - local: pipelines/prod-env-pipeline.yaml

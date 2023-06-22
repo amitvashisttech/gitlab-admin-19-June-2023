@@ -1,0 +1,14 @@
+test: 
+  stage: test
+  needs: ["compile"]
+  script: 
+    - cat complied.txt | grep -q "Orange.ltd" 
+
+package: 
+  stage: package
+  needs: ["test"]
+  script: 
+    - cat complied.txt | gzip > packaged.gz
+  artifacts:
+    paths:
+      - packaged.gz  

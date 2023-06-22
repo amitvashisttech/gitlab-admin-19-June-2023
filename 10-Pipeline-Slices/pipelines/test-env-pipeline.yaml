@@ -1,0 +1,7 @@
+env_test:
+   stage: env_test
+   needs: ["compile"]
+   script: 
+     - echo "Hello Environment Variabls - '$AWS_ACCESS_KEY_ID' and '$AWS_DEFAULT_REGION'"
+   environment:
+     name: test
