@@ -1,0 +1,23 @@
+default:
+  tags: 
+    - shell
+
+
+build_image:
+  script:
+    - whoami 
+    - sudo docker login -u $DOCKER_LOGIN_NAME -p $DOCKER_LOGIN_NAME_TOKEN registry.gitlab.example.com:5005
+    - sudo docker build -t registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-test .
+    - sudo docker push registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-test
+
+test_image:
+  script:
+    - whoami 
+    - sudo docker login -u $DOCKER_LOGIN_NAME -p $DOCKER_LOGIN_NAME_TOKEN registry.gitlab.example.com:5005
+    - sudo docker run -d --name testing-web-app -p 30280:80 registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-test
+    - sudo sleep 10
+    - sudo curl localhost:30280 | grep "Welcome to the world of Docker with GITLab CICD"
+    - sudo docker kill testing-web-app
+    - sudo docker rm testing-web-app
+    - sudo docker tag registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-test registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-latest
+    - sudo docker push  registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:webapp-latest

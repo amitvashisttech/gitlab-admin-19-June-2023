@@ -14,3 +14,8 @@
 ```
 grep -i gitlab-runner /etc/sudoers
 ```
+```
+root@gitlabdemovm1:~# grep -i gitlab-runner /etc/sudoers
+gitlab-runner   ALL=(ALL:ALL) NOPASSWD:ALL
+root@gitlabdemovm1:~#
+```
