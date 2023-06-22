@@ -33,7 +33,7 @@ run: grafana: (pid 152645) 1587s; run: log: (pid 152637) 1588s
 root@gitlabdemovm1:~# 
 ```
 
-## Open the grafana web page by appending gitlab primary url with "/-/grafana"
+## Open the grafana web page by appending gitlab primary url with "/-/grafana" ( http://YourPublicIP/-/grafana )
 ```
 Login Name    : admin 
 Login Password: admin 
