@@ -33,30 +33,31 @@ docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
 6. Update the /etc/hosts for local resolutions: 
 ```
+127.0.0.1 registry.gitlab.example.com
 ```
 
-6. Docker Login: 
+7. Docker Login: 
 ```
-docker login registry.gitlab.example.com:5000
+docker login registry.gitlab.example.com:5005
 ```
 
-7. Pull any image from hub.docker.com
+8. Pull any image from hub.docker.com
 ```
 docker pull ubuntu:latest
 ```
 
-8. Re-Tag your image with your project specific paths:
+9. Re-Tag your image with your project specific paths:
 ```
 docker tag ubuntu:latest registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:v1
 
 ```
 
-9. Docker Push 
+10. Docker Push 
 ```
 docker push registry.gitlab.example.com:5005/development-group/dataplatform/my-dp-project-uat:v1
 ```
 
-10. Now your newly pushed image should be avaliable under the Container Registry Section:  ( GitLab -> Project -> Left Hand Menu ( Packages & Registry ) -> Container Registry ) 
+11. Now your newly pushed image should be avaliable under the Container Registry Section:  ( GitLab -> Project -> Left Hand Menu ( Packages & Registry ) -> Container Registry ) 
 
 
 
